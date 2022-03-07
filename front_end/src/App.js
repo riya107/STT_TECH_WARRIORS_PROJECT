@@ -11,6 +11,7 @@ import Message from './components/Message';
 function App() {
   return (
     <>
+    <Message side="left" message="This is it" user="ushasri"/>
       <Router>
         <Routes>
           <Route path='/' element={<Home/>}></Route>
