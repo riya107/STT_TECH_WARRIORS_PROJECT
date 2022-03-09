@@ -69,7 +69,7 @@ function Chat() {
   return (
     <>
       <div className='container'>
-      <div className="header"></div>
+      <div className="header">HiHello-Tech Warriors</div>
       <ScrollBottom className="chatBox">{
           messages.map((data)=>{
             return <Message user={data.user} side={data.side} message={data.message}/>

@@ -20,7 +20,7 @@ function Home() {
   return (
     <>
         <form action="" >
-            <div className='head'></div>
+            <div className='head'>HiHello-Tech Warriors</div>
             <div>
             <input className='component' type="text" onChange={(e)=>{setUser(e.target.value)}} value={user} placeholder='Enter Your Name'/>
             </div>
@@ -28,6 +28,9 @@ function Home() {
             <input className='component' type="submit" onClick={join} value='Join Chat'/>
             </div>
         </form>
+        <footer>
+        &copy;2022-2024 Tech Warriors
+        </footer>
     </>
   )
 }
