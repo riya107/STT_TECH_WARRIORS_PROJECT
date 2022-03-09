@@ -1,0 +1,52 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.container{
+    width: 50%;
+    height: 80vh;
+    min-width: 360px;
+    max-width: 600px;
+    margin: auto;
+}
+@media (orientation: portrait) {
+    .container {
+      height: 100vh;
+    }
+  }
+
+.header{
+    height: 10%;
+    background-color: cornflowerblue;
+}
+
+.sendIcon{
+    color:lightcoral;
+}
+
+.chatBox{
+    background-color: azure;
+    height: 80%;
+    overflow: hidden;
+}
+
+.inputBox{
+    height: 10%;
+    background-color: black;
+}
+
+.send{
+    margin: auto;
+    width:19.8%;
+    height: 100%;
+    float: right;
+    font-size: 1rem;
+    background-color: lightcyan;
+    cursor: pointer;
+}
+
+.message{
+    font-size: 1.5rem;
+    height: 95%;
+    width: 79%;
+}

@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef} from 'react'
 import { exportuser } from './Home'
-import ScrollBottom from 'react-scroll-to-bottom'
 import socketIo from 'socket.io-client'
+import '../styles/Chat.css'
+import SendIcon from '@mui/icons-material/Send';
+import Message from './Message';
+import ScrollBottom from 'react-scroll-to-bottom'
 
 function Chat() {
   const [messages,setMessages]=useState([])
@@ -10,10 +13,15 @@ function Chat() {
   const refmessages=useRef(messages)
 
   function sendMessage(){
-    socket.emit('messagesend',{user:exportuser,id:id,message:message})
-    setMessage('')
+    if(message.length==0){
+      alert("Empty message is not allowed")
+    }
+    else{
+      socket.emit('messagesend',{user:exportuser,id:id,message:message})
+      setMessage('')
+    }
   }
-
+ 
   const socket=socketIo(process.env.REACT_APP_SERVER,{cors: {
     origin: process.env.REACT_APP_SERVER,
     credentials: true
@@ -21,6 +29,7 @@ function Chat() {
 
   useEffect(()=>{
     socket.on('connect',()=>{
+      console.log("connected")
       setId(socket.id)
       socket.emit('join',{exportuser})
     })
@@ -59,20 +68,17 @@ function Chat() {
 
   return (
     <>
-      <div>
-      <div ></div>
-      <div style={{width:"300px",height:"300px",border:"2px solid black"}}>
-      {console.log(messages)}{
+      <div className='container'>
+      <div className="header"></div>
+      <ScrollBottom className="chatBox">{
           messages.map((data)=>{
-            return (
-              <div>{data.user}:{data.message}</div>
-            )
+            return <Message user={data.user} side={data.side} message={data.message}/>
           })
         }
-      </div>
-      <div >
-      <input  value={message} onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message here'/>
-        <button onClick={sendMessage}>SEND</button>
+      </ScrollBottom>
+      <div className="inputBox">
+      <input className='message' value={message} onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message here'/>
+        <button className='send' onClick={sendMessage}><SendIcon className={'sendIcon'} fontSize='small'/></button>
       </div>
       </div>
     </>
