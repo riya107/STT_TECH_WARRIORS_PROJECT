@@ -1,7 +1,8 @@
 # STT_TECH_WARRIORS_PROJECT
 This is a chat application created by Tech Warriors.
 # LINKS
-Link to the deployed chat app: https://hihello-tech-warriors.netlify.app/
+Link to the deployed chat app: https://hihello-tech-warriors.netlify.app/ 
+
 Link to git hub repository: https://github.com/riya107/STT_TECH_WARRIORS_PROJECT
 
 ## Technologies used :- 
