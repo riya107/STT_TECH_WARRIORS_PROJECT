@@ -9,13 +9,21 @@ Link to git hub repository: https://github.com/riya107/STT_TECH_WARRIORS_PROJECT
 express.js and react.js
 # Instructions to execute :-
 git clone https://github.com/riya107/STT_TECH_WARRIORS_PROJECT.git
+
 cd STT_TECH_WARRIORS_PROJECT
+
 cd backend
+
 npm i
+
 node index.js
+
 cd \.\./front_end
+
 npm i
+
 npm start
+
 go to http://localhost:3000/
 
 # NOTE :- 
